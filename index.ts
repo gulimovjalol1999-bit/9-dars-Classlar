@@ -603,59 +603,59 @@
 // console.log(product2.getPrice());
 
 //4
-abstract class Character {
-  name: string;
-  health: number;
+// abstract class Character {
+//   name: string;
+//   health: number;
 
-  constructor(name: string, health: number) {
-    this.name = name;
-    this.health = health;
-  }
+//   constructor(name: string, health: number) {
+//     this.name = name;
+//     this.health = health;
+//   }
 
-  abstract attack(target: Character): void;
-  abstract defend(damage: number): void;
+//   abstract attack(target: Character): void;
+//   abstract defend(damage: number): void;
 
-  isAlive(): boolean {
-    return this.health > 0;
-  }
-}
+//   isAlive(): boolean {
+//     return this.health > 0;
+//   }
+// }
 
-class Warrior extends Character {
-  attack(target: Character): void {
-    const damage = 20;
-    console.log(`${this.name} qilich bilan hujum qildi (${damage})`);
-    target.defend(damage);
-  }
+// class Warrior extends Character {
+//   attack(target: Character): void {
+//     const damage = 20;
+//     console.log(`${this.name} qilich bilan hujum qildi (${damage})`);
+//     target.defend(damage);
+//   }
 
-  defend(damage: number): void {
-    const reduced = damage - 5; 
-    this.health -= reduced > 0 ? reduced : 0;
-    console.log(`${this.name} zararni kamaytirdi. HP: ${this.health}`);
-  }
-}
+//   defend(damage: number): void {
+//     const reduced = damage - 5; 
+//     this.health -= reduced > 0 ? reduced : 0;
+//     console.log(`${this.name} zararni kamaytirdi. HP: ${this.health}`);
+//   }
+// }
 
-class Mage extends Character {
-  attack(target: Character): void {
-    const damage = 30;
-    console.log(`${this.name} sehr bilan hujum qildi (${damage})`);
-    target.defend(damage);
-  }
+// class Mage extends Character {
+//   attack(target: Character): void {
+//     const damage = 30;
+//     console.log(`${this.name} sehr bilan hujum qildi (${damage})`);
+//     target.defend(damage);
+//   }
 
-  defend(damage: number): void {
-    const reduced = damage - 2; 
-    this.health -= reduced > 0 ? reduced : 0;
-    console.log(`${this.name} kam himoyalandi. HP: ${this.health}`);
-  }
-}
+//   defend(damage: number): void {
+//     const reduced = damage - 2; 
+//     this.health -= reduced > 0 ? reduced : 0;
+//     console.log(`${this.name} kam himoyalandi. HP: ${this.health}`);
+//   }
+// }
 
-const warrior = new Warrior("Grom", 100);
-const mage = new Mage("Merlin", 80);
+// const warrior = new Warrior("Grom", 100);
+// const mage = new Mage("Merlin", 80);
 
-while (warrior.isAlive() && mage.isAlive()) {
-  warrior.attack(mage);
-  if (!mage.isAlive()) break;
+// while (warrior.isAlive() && mage.isAlive()) {
+//   warrior.attack(mage);
+//   if (!mage.isAlive()) break;
 
-  mage.attack(warrior);
-}
+//   mage.attack(warrior);
+// }
 
-console.log("Jang tugadi!");
+// console.log("Jang tugadi!");
